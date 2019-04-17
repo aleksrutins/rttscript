@@ -1,0 +1,11 @@
+{
+  "name": "rttscript",
+  "version": "1.0.0",
+  "description": "A typed language that compiles to javascript with runtime type-checking.",
+  "main": "rttscript.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="rttscript.ts"></script>
+    <script>
+      RTTScript.run(`
+class List<T> (baseArr) {
+    Number property length {
+        get {
+            return baseArr.length;
+        }
+        set(newLength) {
+            baseArr.length = newLength;
+        }
+    };
+    Function add = (item) => {
+        baseArr.push(item);
+    };
+    Function addDefault = () => {
+        baseArr.push(new T());
+    };
+    Array property innerArray {
+        get {
+            return baseArr;
+        }
+        set {
+            alert("Error! Trying to set inner array of List!");
+        }
+    }
+}
+List(String) myList = new List(String)(["hi", "there", "world"]);
+alert(@myList.length() + " element array: " + @myList.innerArray().toString());
+`);
+    </script>
+  </body>
+</html>
